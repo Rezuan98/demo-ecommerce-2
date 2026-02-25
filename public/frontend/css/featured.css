@@ -1,0 +1,343 @@
+.featured-products {
+    background: var(--background-color);
+}
+
+/* Product Box */
+.featured-box {
+    position: relative;
+    background: var(--background-color);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease;
+
+    width: 100%;
+}
+
+.fp-product-info {
+    padding: 10px;
+}
+
+.fp-product-info .fp-product-title {
+    font-size: 14px;
+    margin: 0 0 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+    height: 3em;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-weight: 300;
+
+}
+
+.fp-price-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.fp-current-price {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-body);
+    font-weight: 300;
+}
+
+.original-product-price {
+    color: var(--primary-color);
+    text-decoration: line-through;
+    font-size: 0.9em;
+    margin-left: 5px;
+    font-family: var(--font-body);
+    font-weight: 300;
+}
+
+/* Image Styles */
+.featured-image {
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+    display: block;
+    line-height: 0;
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: .7s ease;
+}
+
+.featured-image .primary-image {
+    position: relative;
+}
+
+.featured-image .hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Badge and Button Styles */
+.featured-wishlist-btn {
+    position: absolute;
+    top: 20px;
+    right: 1px;
+    border: none;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.featured-wishlist-btn i {
+    font-size: 16px;
+    color: var(--text-primary);
+    background-color: transparent;
+}
+
+/* Plus Button */
+.featured-box .plus-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--bg-hover);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    z-index: 2;
+}
+
+.featured-box:hover .plus-btn {
+    opacity: 1;
+}
+
+.featured-box .plus-btn:hover {
+    background-color: var(--text-primary);
+}
+
+/* Desktop Layout */
+@media (min-width: 767px) {
+    .featured-products .col-md-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+
+/* Hover Image Styles */
+.featured-box:hover .primary-image {
+    opacity: 0;
+}
+
+.featured-box:hover .hover-image {
+    opacity: 1;
+}
+
+.featured-image .hover-image {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.out-of-stock-band {
+    position: absolute;
+    top: 20px;
+    left: -40px;
+    background: var(--primary-color);
+    color: var(--bg-hover);
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 40px;
+    text-align: center;
+    transform: rotate(-45deg);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    text-transform: uppercase;
+}
+
+/* FIXED MOBILE LAYOUT */
+@media (min-width: 320px) and (max-width: 766px) {
+
+    /* Remove the margin from featured-box and add padding to columns */
+    .featured-box {
+        margin: 0 !important;
+    }
+
+    .featured-products .col-lg-2-4,
+    .featured-products .col-md-2-4 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        width: 50% !important;
+        padding: 0px !important;
+        box-sizing: border-box;
+    }
+
+    .featured-box .fp-product-title {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .featured-box .plus-btn {
+        opacity: 1;
+        width: 25px;
+        height: 25px;
+        bottom: 5px;
+        right: 5px;
+    }
+
+    .featured-box .original-product-price {
+        font-size: 10px;
+        margin-left: 2px;
+    }
+
+    .featured-box .featured-wishlist-btn {
+        top: 10px;
+        right: 10px;
+    }
+
+    .fp-product-info .fp-product-title {
+        font-size: 12px;
+        line-height: 1.4;
+        height: 2.8em;
+    }
+
+    .original-product-price {
+        font-size: 10px;
+    }
+
+    .section-title {
+        font-size: 15px;
+        color: var(--text-primary);
+    }
+}
+
+.section-title {
+    color: var(--text-primary);
+}
+
+/* ── Shared Product Slider ────────────────────────────────────────── */
+.section-header-with-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.section-header-with-arrows h2,
+.section-header-with-arrows h3 {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Arrows overlaid on the slider */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 13px;
+    color: #666;
+    padding: 0;
+    line-height: 1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.slider-arrow-prev {
+    left: 8px;
+}
+
+.slider-arrow-next {
+    right: 8px;
+}
+
+.slider-arrow:hover:not(:disabled) {
+    background: var(--primary-color, #4f0808);
+    border-color: var(--primary-color, #4f0808);
+    color: #fff;
+}
+
+.slider-arrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+}
+
+.product-slider-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.product-slider-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+/* 4 cards — desktop */
+.product-slide {
+    flex: 0 0 calc((100% - 3 * 16px) / 4);
+    min-width: 0;
+}
+
+/* 3 cards — medium screens */
+@media (max-width: 1199px) {
+    .product-slide {
+        flex: 0 0 calc((100% - 2 * 16px) / 3);
+    }
+}
+
+/* 2 cards — tablet & mobile */
+@media (max-width: 767px) {
+    .product-slide {
+        flex: 0 0 calc((100% - 16px) / 2);
+    }
+
+    .slider-arrow {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+    }
+
+    .slider-arrow-prev {
+        left: 4px;
+    }
+
+    .slider-arrow-next {
+        right: 4px;
+    }
+}

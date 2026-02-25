@@ -1,0 +1,42 @@
+:root {
+    /* Brand Colors */
+    --primary-color: #1D4654;
+    --secondary-color: #000000;
+    --third-color: #423F3F;
+
+    /* Backgrounds */
+    --background-color: #FFFFFF;
+    --secondery-background-color: #E8E4DF;
+    --bg-light: #f8f9fa;
+    --bg-hover: #f5f5f5;
+
+    /* Text */
+    --text-dark: #0f0f0f;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-muted: #999999;
+    --text-light: #cccccc;
+
+    /* Borders */
+    --border-color: #e9ecef;
+    --border-light: #f0f0f0;
+    --border-medium: #dddddd;
+    --border-dark: #eee;
+
+    /* Semantic */
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --info-color: #007bff;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+    /* Copyright/Footer */
+    --copyright-bg: #4a4444;
+
+    /* Font Families */
+    --font-heading: "Raleway", sans-serif;
+    --font-body: "Poppins", sans-serif;
+}

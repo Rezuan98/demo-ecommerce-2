@@ -1,0 +1,397 @@
+/* Track Order Page */
+.track-order-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 15px 60px;
+}
+
+.track-order-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.track-order-title {
+    font: 600 28px var(--font-heading);
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.track-order-subtitle {
+    font: 400 14px var(--font-body);
+    color: var(--text-muted);
+}
+
+/* Search Form */
+.track-search-wrapper {
+    margin-bottom: 35px;
+}
+
+.track-input-group {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid var(--border-light);
+    border-radius: 50px;
+    overflow: hidden;
+    background: #fff;
+    transition: border-color 0.2s;
+}
+
+.track-input-group:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.08);
+}
+
+.track-search-icon {
+    padding: 0 0 0 18px;
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+.track-search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 14px 14px;
+    font: 400 15px var(--font-body);
+    background: transparent;
+    color: var(--text-dark);
+}
+
+.track-search-input::placeholder {
+    color: var(--text-muted);
+}
+
+.track-search-btn {
+    padding: 12px 28px;
+    background: var(--secondary-color);
+    color: #fff;
+    border: none;
+    font: 600 14px var(--font-body);
+    cursor: pointer;
+    border-radius: 0 50px 50px 0;
+    transition: filter 0.15s;
+    white-space: nowrap;
+}
+
+.track-search-btn:hover {
+    filter: brightness(0.9);
+}
+
+/* Not Found */
+.track-not-found {
+    text-align: center;
+    padding: 40px 20px;
+    background: #fff8f0;
+    border: 1px solid #ffe0c2;
+    border-radius: 12px;
+}
+
+.track-not-found i {
+    font-size: 40px;
+    color: #e67e22;
+    margin-bottom: 12px;
+}
+
+.track-not-found h3 {
+    font: 600 18px var(--font-body);
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.track-not-found p {
+    font: 400 14px var(--font-body);
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Order Summary Card */
+.track-order-card {
+    background: #fff;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+}
+
+.track-order-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.track-summary-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.track-label {
+    font: 400 12px var(--font-body);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.track-value {
+    font: 600 15px var(--font-body);
+    color: var(--text-dark);
+}
+
+.track-price {
+    color: var(--primary-color);
+}
+
+/* Badges */
+.track-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font: 500 12px var(--font-body);
+}
+
+.track-badge-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.track-badge-paid {
+    background: #d4edda;
+    color: #155724;
+}
+
+.track-badge-failed {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Timeline Card */
+.track-timeline-card {
+    background: #fff;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.track-timeline-title,
+.track-items-title {
+    font: 600 16px var(--font-body);
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+/* Timeline */
+.track-timeline {
+    padding-left: 4px;
+}
+
+.track-step {
+    display: flex;
+    gap: 16px;
+    position: relative;
+}
+
+.track-step-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.track-step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--border-light);
+    background: #f8f8f8;
+    color: var(--text-muted);
+    font-size: 15px;
+    z-index: 1;
+    transition: all 0.3s;
+}
+
+.track-step.completed .track-step-circle {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.track-step.active .track-step-circle {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 0 0 4px rgba(var(--primary-color-rgb), 0.15);
+}
+
+.track-step.cancelled .track-step-circle {
+    border-color: #dc3545;
+    background: #dc3545;
+    color: #fff;
+    box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.15);
+}
+
+.track-step-line {
+    width: 2px;
+    flex: 1;
+    min-height: 30px;
+    background: var(--border-light);
+    margin: 4px 0;
+}
+
+.track-step.completed .track-step-line {
+    background: var(--primary-color);
+}
+
+.track-step-content {
+    padding-bottom: 28px;
+    padding-top: 6px;
+}
+
+.track-step:last-child .track-step-content {
+    padding-bottom: 0;
+}
+
+.track-step-label {
+    font: 600 15px var(--font-body);
+    color: var(--text-dark);
+    margin: 0 0 3px;
+}
+
+.track-step:not(.completed):not(.active) .track-step-label {
+    color: var(--text-muted);
+}
+
+.track-step.cancelled .track-step-label {
+    color: #dc3545;
+}
+
+.track-step-desc {
+    font: 400 13px var(--font-body);
+    color: var(--text-muted);
+    margin: 0 0 4px;
+}
+
+.track-step-date {
+    font: 400 12px var(--font-body);
+    color: var(--text-muted);
+}
+
+.track-step-date i {
+    margin-right: 4px;
+}
+
+/* Order Items Card */
+.track-items-card {
+    background: #fff;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.track-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.track-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.track-item:first-of-type {
+    padding-top: 0;
+}
+
+.track-item-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: #f5f5f5;
+}
+
+.track-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.track-item-name {
+    font: 500 14px var(--font-body);
+    color: var(--text-dark);
+    margin: 0 0 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-item-variant {
+    font: 400 12px var(--font-body);
+    color: var(--text-muted);
+}
+
+.track-item-price {
+    font: 600 14px var(--font-body);
+    color: var(--text-dark);
+    white-space: nowrap;
+}
+
+/* Default State */
+.track-default-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+}
+
+.track-default-state i {
+    font-size: 50px;
+    margin-bottom: 16px;
+    opacity: 0.3;
+}
+
+.track-default-state p {
+    font: 400 15px var(--font-body);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .track-order-container {
+        padding: 25px 15px 40px;
+    }
+
+    .track-order-title {
+        font-size: 22px;
+    }
+
+    .track-order-summary {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .track-search-btn {
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .track-order-summary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .track-item-img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .track-step-circle {
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
+}

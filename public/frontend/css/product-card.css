@@ -1,0 +1,228 @@
+/* ============================================================
+   Unified Product Card (.pc-*)
+   Matches the new-arrival / featured design language
+   ============================================================ */
+
+/* Card box */
+.pc-box {
+    position: relative;
+    background: var(--background-color);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.pc-box:hover {
+    box-shadow: var(--shadow-md);
+}
+
+/* ---- Image container ---- */
+.pc-image {
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+    display: block;
+    line-height: 0;
+}
+
+.pc-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: .7s ease;
+}
+
+.pc-image .pc-primary {
+    position: relative;
+}
+
+.pc-image .pc-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pc-box:hover .pc-primary {
+    opacity: 0;
+}
+
+.pc-box:hover .pc-hover {
+    opacity: 1;
+}
+
+/* ---- Out-of-stock band ---- */
+.pc-oos-band {
+    position: absolute;
+    top: 20px;
+    left: -40px;
+    background: var(--primary-color);
+    color: var(--bg-hover);
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 40px;
+    text-align: center;
+    transform: rotate(-45deg);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    text-transform: uppercase;
+}
+
+
+/* ---- Product info ---- */
+.pc-info {
+    padding: 5px 10px 10px;
+    width: 100%;
+}
+
+.pc-title {
+    font-size: 14px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    width: 100%;
+    min-height: 36px;
+    line-height: 1.5;
+    white-space: normal;
+    font-family: var(--font-body);
+    font-weight: 300;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.pc-title:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---- Price row ---- */
+.pc-price-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.pc-price-left {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.pc-current-price {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-body);
+    font-weight: 300;
+}
+
+.pc-stock {
+    font-size: 10px;
+    color: var(--text-secondary);
+}
+
+.pc-original-price {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    font-family: var(--font-body);
+    font-weight: 300;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (min-width: 320px) and (max-width: 766px) {
+    .pc-box {
+        margin: 0;
+    }
+
+    .pc-title {
+        font-size: 12px;
+        line-height: 1.4;
+        min-height: 2.8em;
+    }
+
+
+    .pc-original-price {
+        font-size: 10px;
+    }
+}
+
+/* ---- Wishlist heart button ---- */
+.pc-wishlist-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: scale(0.8);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pc-box:hover .pc-wishlist-btn,
+.pc-wishlist-btn.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pc-wishlist-btn:hover {
+    background: #fff;
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ---- Wishlist heart icon (img based) ---- */
+.pc-wishlist-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: brightness(0) saturate(100%) opacity(0.5);
+}
+
+.pc-wishlist-icon.wishlisted,
+.pc-wishlist-btn.active .pc-wishlist-icon {
+    filter: brightness(0) saturate(100%) invert(27%) sepia(95%) saturate(4946%) hue-rotate(344deg) brightness(93%) contrast(87%);
+}
+
+.pc-wishlist-btn:active .pc-wishlist-icon {
+    transform: scale(1.3);
+}
+
+/* On mobile — always show the heart */
+@media (max-width: 766px) {
+    .pc-wishlist-btn {
+        opacity: 1;
+        transform: scale(1);
+        width: 28px;
+        height: 28px;
+        top: 6px;
+        right: 6px;
+    }
+
+    .pc-wishlist-btn i {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,22 @@
+﻿
+   ReflectionException 
+
+  Class "App\Http\Controllers\Frontend\SearchController" does not exist
+
+  at vendor\laravel\framework\src\Illuminate\Foundation\Console\RouteListCommand.php:225
+    221Γûò             if ($this->isFrameworkController($route)) {
+    222Γûò                 return false;
+    223Γûò             }
+    224Γûò 
+  Γ₧£ 225Γûò             $path = (new ReflectionClass($route->getControllerClass()))
+    226Γûò                                 ->getFileName();
+    227Γûò         } else {
+    228Γûò             return false;
+    229Γûò         }
+
+  1   vendor\laravel\framework\src\Illuminate\Foundation\Console\RouteListCommand.php:225
+      ReflectionClass::__construct("App\Http\Controllers\Frontend\SearchController")
+
+  2   vendor\laravel\framework\src\Illuminate\Foundation\Console\RouteListCommand.php:147
+      Illuminate\Foundation\Console\RouteListCommand::isVendorRoute(Object(Illuminate\Routing\Route))
+

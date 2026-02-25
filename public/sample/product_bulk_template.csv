@@ -1,0 +1,2 @@
+product_name,slug,product_image ,category_id ,subcategory_id,brand_id ,unit_id,discount_type,discount_amount,tags,sale_price,description,gallery_images,variants
+Men's Cotton T-Shirt,mens-cotton-tshirt,rsm20.jpg,1,1,1,1,percentage,10,ughftrhsdtd,1000,piouyftnmgu,rsm20.jpg|rsm18.jpg|rsm21.jpg,1:1:50:950|2:2:30:950
