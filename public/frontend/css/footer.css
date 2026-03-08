@@ -120,7 +120,7 @@
 
 /* Copyright Section */
 .chileghuri-copyright-section {
-    background-color: var(--copyright-bg);
+    background-color: var(--primary-color);
     padding: 20px 0;
     color: var(--text-light);
     font-family: var(--font-body);
